@@ -9,8 +9,9 @@ export default class LMS extends Component{
 
         this.state={
             students: null,
+            index: props.route.params.index,
         }
-        console.log(sections[props.route.params.index])
+        
     }
 
     componentDidUpdate(){

@@ -2,17 +2,26 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Dashboard from './Dashboard';
 import Classwork from './Classwork';
-// import LMS from './LMS';
-import Sections from './Sections';
+ import LMS from './LMS';
+//import Sections from './Sections';
 import React,{ Component } from 'react';
 const Tab = createMaterialBottomTabNavigator();
 
 export default class Tabs extends Component {
+
+  constructor(props){
+    super(props)
+
+    this.state={
+      index: props.route.params.index,
+    }
+  }
+
     render(){
   return (
       <>
     <Tab.Navigator
-       initialRouteName="Dashboard"
+       initialRouteName="LMS"
        shifting={true}
        activeColor="white"
        inactiveColor="lightgrey"
@@ -23,7 +32,7 @@ export default class Tabs extends Component {
         options={{
           tabBarLabel: 'Classwork',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={26} />
+            <MaterialCommunityIcons name="buffer" color={color} size={26} />
           ),
           tabBarColor: '#9c27b0'
         }}
@@ -41,7 +50,8 @@ export default class Tabs extends Component {
       />
       <Tab.Screen
         name="LMS"
-        component={Sections}
+        component={LMS}
+        initialParams={{index: this.state.index}}
         options={{
           tabBarLabel: 'Students',
           tabBarIcon: ({ color }) => (

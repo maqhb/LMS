@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Home from './src/Home';
 import Tabs from './src/Tabs';
 import Students from './src/LMS'
+import Sections from './src/Sections'
 const Stack = createStackNavigator();
 
 
@@ -28,6 +29,11 @@ export default class App extends Component{
        }} />
       <Stack.Screen name="Students" 
        component={Students}
+        options={{ title: 'LMS',
+        headerTitleAlign: 'center',
+       }} />
+        <Stack.Screen name="Sections" 
+       component={Sections}
         options={{ title: 'LMS',
         headerTitleAlign: 'center',
        }} />

@@ -43,7 +43,7 @@ class Sections extends Component {
                     title={`${sections[item].currSection}`}
                     chevron
                     onPress={()=>{
-                    this.props.navigation.navigate("Students",{index: item})}}
+                    this.props.navigation.navigate("Tabs",{index: item})}}
                   />
                 )}
                 />
